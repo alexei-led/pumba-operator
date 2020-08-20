@@ -1,0 +1,24 @@
+# permissions for end users to edit killcontainers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: killcontainer-editor-role
+rules:
+- apiGroups:
+  - chaos.pumba.dev
+  resources:
+  - killcontainers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - chaos.pumba.dev
+  resources:
+  - killcontainers/status
+  verbs:
+  - get

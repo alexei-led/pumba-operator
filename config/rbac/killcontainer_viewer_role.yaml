@@ -1,0 +1,20 @@
+# permissions for end users to view killcontainers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: killcontainer-viewer-role
+rules:
+- apiGroups:
+  - chaos.pumba.dev
+  resources:
+  - killcontainers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - chaos.pumba.dev
+  resources:
+  - killcontainers/status
+  verbs:
+  - get

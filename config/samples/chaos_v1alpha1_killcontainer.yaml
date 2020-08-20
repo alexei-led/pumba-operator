@@ -1,0 +1,12 @@
+apiVersion: chaos.pumba.dev/v1alpha1
+kind: KillContainer
+metadata:
+  name: killcontainer-sample
+spec:
+  # Add fields here
+  signal: 9
+  selector:
+    labelSelectors:
+      "app.kubernetes.io/component": "tikv"
+  scheduler:
+    cron: "@every 1m"

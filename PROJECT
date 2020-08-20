@@ -1,0 +1,11 @@
+domain: pumba.dev
+layout: go.kubebuilder.io/v2
+multigroup: true
+repo: github.com/alexei-led/timon
+resources:
+- group: chaos
+  kind: KillContainer
+  version: v1alpha1
+version: 3-alpha
+plugins:
+  go.operator-sdk.io/v2-alpha: {}
